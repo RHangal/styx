@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
       domain: 'dev-uddjm4fii5jj4jc5.us.auth0.com',
       clientId: 'VzjPNirtcOeZ2hyUDmeusr9k4LZmC9xx',
       authorizationParams: {
-        redirect_uri: window.location.origin + '/profile/',
+        redirect_uri: window.location.origin,
       },
     }),
     provideHttpClient(),
