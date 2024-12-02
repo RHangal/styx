@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://styxentrance.eastus.cloudapp.azure.com/api/',
+  apiUrl: 'https://please-work1.azurewebsites.net/api/',
 };
