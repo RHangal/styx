@@ -17,6 +17,18 @@ export class ShopPageComponent implements OnInit {
   successMessage: string = '';
   userCoins: string = '';
   loading: boolean = false;
+  isTopUp = false; // Toggle state
+  // Top-up options
+  topUpOptions = [
+    { price: 99.99, amount: 10000 },
+    { price: 49.99, amount: 5000 },
+    { price: 19.99, amount: 2000 },
+    { price: 9.99, amount: 1000 },
+  ];
+
+  toggleTopUp() {
+    this.isTopUp = !this.isTopUp;
+  }
 
   constructor(private shopService: ShopService, public auth: AuthService) {}
 
