@@ -14,12 +14,14 @@
     <!-- Conditional File Upload Form -->
     <div *ngIf="isEditingPhoto" class="photo-upload-form">
       <input type="file" (change)="onFileSelected($event)" />
-      <button (click)="uploadProfilePhoto()">Upload</button>
+      <button (click)="uploadProfilePhoto()" [disabled]="isLoading">
+        Upload
+      </button>
     </div>
 
     <div *ngIf="isLoading" class="loading-overlay">
       <div class="spinner"></div>
-      <p>Creating post...</p>
+      <p>Uploading photo...</p>
     </div>
 
     <h2>User Profile</h2>
