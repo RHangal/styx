@@ -19,6 +19,7 @@ export class ProfilePageComponent implements OnInit {
   profilePhotoUrl: string | null = null;
   isEditingPhoto: boolean = false; // Toggle for showing upload form
   showingProfile: boolean = true;
+  isLoading: boolean = false; // Flag to track loading state
 
   constructor(
     private profileService: ProfileService,
@@ -127,16 +128,19 @@ export class ProfilePageComponent implements OnInit {
           const auth0UserId = user.sub;
 
           if (this.selectedFile) {
+            this.isLoading = true;
             this.profileService
               .uploadNewProfilePhoto(auth0UserId, this.selectedFile)
               .subscribe({
                 next: (response: any) => {
+                  this.isLoading = false;
                   this.profilePhotoUrl = response.photoUrl; // Update the displayed photo URL
                   this.isEditingPhoto = false; // Hide upload form after success
                   this.loadUserProfile(auth0UserId);
                   alert('Profile photo updated successfully!');
                 },
                 error: (error) => {
+                  this.isLoading = false;
                   console.error('Error updating profile photo:', error);
                   alert('Failed to update profile photo.');
                 },

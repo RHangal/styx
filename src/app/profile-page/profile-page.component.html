@@ -16,6 +16,12 @@
       <input type="file" (change)="onFileSelected($event)" />
       <button (click)="uploadProfilePhoto()">Upload</button>
     </div>
+
+    <div *ngIf="isLoading" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Creating post...</p>
+    </div>
+
     <h2>User Profile</h2>
 
     <div *ngIf="!isEditing; else editForm">

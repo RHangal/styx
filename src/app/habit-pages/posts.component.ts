@@ -184,7 +184,7 @@ export class PostsComponent implements OnInit {
               : 'Comment added successfully!'
           );
           this.resetCommentFields();
-          this.fetchPosts('dogs');
+          this.fetchPosts(this.postType);
         },
         error: (err) => {
           console.error('Error adding comment:', err);
