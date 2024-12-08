@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://please-work1.azurewebsites.net/api/',
+  apiUrl: 'https://api.stiyx.org/api/',
 };
